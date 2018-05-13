@@ -8,6 +8,13 @@
      <link rel="stylesheet" href="{% static 'styles.css' %}">
   </head>
   <body>
+    
+    <form class="logout" action={% url 'logout' %} method="post">
+      {% csrf_token %}
+      <input type="submit" value="logout">
+    </form>
+
+
     <h1>This is where you'll see other people's uploads</h1>
     <div class="posts">
       {% for posts in posts %}

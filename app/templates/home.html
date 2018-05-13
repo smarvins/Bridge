@@ -19,10 +19,12 @@
 
     <h2>login here!</h2>
 
-    <form class="form" action={% url 'login' %} method="post">
+    <form class="login" action={% url 'login' %} method="post">
       {% csrf_token %}
       {{ form }}
       <input type="submit" value="login">
     </form>
+
+    <h2>logout here!</h2>
   </body>
 </html>

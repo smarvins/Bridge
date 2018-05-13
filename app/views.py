@@ -50,3 +50,10 @@ def login(request):
     else:
       form = AuthenticationForm()
     return render(request,'home.html', { 'form': form })
+
+###########################################################################
+
+def logout(request):
+    if request.method == 'POST':
+        logout(request)
+        return render(request,'home.html')

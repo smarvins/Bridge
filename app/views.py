@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import app
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -57,3 +58,9 @@ def logout(request):
     if request.method == 'POST':
         logout(request)
         return render(request,'home.html')
+
+###########################################################################
+
+@login_required(login_url="home")
+def newpost(request):
+    return render(request,'profile.html')

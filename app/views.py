@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import app
 
+
 # Create your views here.
 def timeline(request):
     posts = app.objects.all().order_by('date');
@@ -13,4 +14,7 @@ def search(request):
     return render(request,'search.html')
 
 def home(request):
+    return render(request,'home.html')
+
+def signup(request):
     return render(request,'home.html')

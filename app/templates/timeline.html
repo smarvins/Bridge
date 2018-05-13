@@ -5,6 +5,15 @@
     <title>Timeline</title>
   </head>
   <body>
-<h1>This is where you'll see other people's uploads</h1>
+    <h1>This is where you'll see other people's uploads</h1>
+    <div class="posts">
+      {% for posts in posts %}
+        <div class="list_of_posts">
+          <img src="{{ app.thumb.url }}" />
+          <h4>{{ app.body }}</h4>
+          <h4>{{ app.date }}</h4>
+        </div>
+      {% endfor %}
+    </div>
   </body>
 </html>

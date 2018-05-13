@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import app
 from django.contrib.auth.forms import UserCreationForm
 
@@ -19,5 +19,11 @@ def home(request):
     return render(request,'home.html')
 
 def signup(request):
-    form = UserCreationForm()
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('app:timeline')
+    else:
+      form = UserCreationForm()
     return render(request,'home.html', { 'form': form })

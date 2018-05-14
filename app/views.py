@@ -47,7 +47,10 @@ def login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('app:timeline')
+            if 'next' in request.POST:
+               return redirect(request.POST.get('next'))
+            else:
+               return redirect('app:timeline')
     else:
       form = AuthenticationForm()
     return render(request,'home.html', { 'form': form })

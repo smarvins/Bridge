@@ -8,7 +8,7 @@
      <link rel="stylesheet" href="{% static 'styles.css' %}">
   </head>
   <body>
-
+                     <!-- logout button -->
     <form class="logout" action={% url 'logout' %} method="post">
       {% csrf_token %}
       <input type="submit" value="logout">
@@ -17,7 +17,11 @@
     <h1>This is your profile page</h1>
     <div class="newpost">
       <h2>You'll create new posts here</h2>
-      
+                     <!-- create new post  -->
+      <form class="form" action={% url 'profile' %} method="post">
+        {{ form }}
+      </form>
+
     </div>
   </body>
 </html>

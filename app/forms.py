@@ -8,7 +8,7 @@ class newpost(forms.ModelForm):
         fields = ['thumb','body']
 
 
-class profile(forms.ModelForm):
-    class Meta:
-        model = models.app
-        fields = ['name','profilepic','backgroundimage','bio','email']
+# class profile(forms.ModelForm):
+#     class Meta:
+#         model = models.app
+#         fields = ['name','profilepic','backgroundimage','bio','email']

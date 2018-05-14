@@ -6,20 +6,84 @@
     <meta charset="utf-8">
     <title>Profile</title>
      <link rel="stylesheet" href="{% static 'styles.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Gothic+A1|Poiret+One" rel="stylesheet">
   </head>
+
+
+  <style>
+h1{
+  margin-bottom: 10%;
+  font-size: 60px;
+  text-align: center;
+}
+div{
+  color: white;
+  font-family: 'Gothic A1', sans-serif;
+  font-family: 'Poiret One', cursive;
+}
+body{
+  height: 100%;
+ background: linear-gradient(#007991, #78ffd6);
+ background-repeat: no-repeat;
+}
+input{
+  color: white;
+  border-radius: 50%;
+  border: 10px solid white;
+  border-top: 10px transparent;
+  border-bottom: 10px solid white;
+  /* border-color: white; */
+  border-width: 5px;
+  background: transparent;
+  padding: 0px;
+  width: 150px;
+  height: 150px;
+}
+form{
+  margin-left: 1100px;
+}
+.login{
+  margin-left: 1000px;
+}
+.paragraph{
+  text-align: center;
+  margin-bottom: 10%;
+}
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: linear-gradient(#007991, #78ffd6);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+
+    border-radius: 20px;
+    border:2px solid white;
+    background: transparent;
+}
+
+</style>
+
+
   <body>
-    <h1>This is where you'll be signing in</h1>
-    <h2>Sign in here!</h2>
+    <div>
+    <h1>Welcome to the bridge</h1>
+    <h2 class="paragraph">A site where you can share your experiences with your friends and families, be inspired to look for new experiences from others and make new friends with them ! The bridge was specifically built to meet this needs because we all need to connect to one another to express our emotions,energy and the very vibrance that makes us us</h2>
 
     <form class="form" action={% url 'signup' %} method="post">
+      <h2>Sign in here!</h2>
       {% csrf_token %}
       {{ form }}
       <input type="submit" value="Signup">
     </form>
 
-    <h2>login here!</h2>
 
     <form class="login" action={% url 'login' %} method="post">
+      <h2>login here!</h2>
       {% csrf_token %}
       {{ form }}
       {% if request.GET.next %}
@@ -27,7 +91,6 @@
       {% endif %}
       <input type="submit" value="login">
     </form>
-
-    <h2>logout here!</h2>
+  </div>
   </body>
 </html>

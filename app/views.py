@@ -68,10 +68,10 @@ def logout(request):
 @login_required(login_url="home")
 def newpost(request):
     if request.method == 'POST':
-        form = forms.newpost(request.POST, request.FILES)
+        form = forms.newpost(request.POST, request.newpost)
         if form.is_valid():
             return redirect('profile.htnl')
     else:
-        form = forms.CreateArticle()
+        form = forms.newpost()
 
-    return render(request,'profile.html')
+    return render(request,'profile.html', )

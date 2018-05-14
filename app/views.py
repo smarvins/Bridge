@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import app
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from .import forms
 
@@ -67,4 +67,11 @@ def logout(request):
 
 @login_required(login_url="home")
 def newpost(request):
+    if request.method == 'POST':
+        form = forms.newpost(request.POST, request.FILES)
+        if form.is_valid():
+            return redirect('profile.htnl')
+    else:
+        form = forms.CreateArticle()
+
     return render(request,'profile.html')

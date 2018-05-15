@@ -59,12 +59,12 @@
     border: 5px solid white;
     padding-bottom: 50px;
   }
-img{
+/* img{
   border-radius: 0px 0px 50px 0px;
   border: 1px solid white;
   padding-bottom: 300px;
   padding-left: 650px;
-}
+} */
 button{
   display: inline-block;
   color: white;
@@ -76,10 +76,20 @@ button{
   background-color: transparent;
   border: 1px solid white;
 }
+h5{
+  float: right;
+}
+img{
+  width:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
   </style>
   <body>
 
-    <form class="logout" action={% url 'logout' %} method="post">
+    <form class="logout" action={% url 'home' %} method="post">
       {% csrf_token %}
       <input type="submit" value="logout">
     </form>
@@ -89,9 +99,10 @@ button{
     <div class="posts">
       {% for posts in posts %}
         <div class="list_of_posts">
-          <img src="{{ app.thumb.url }}" />
-          <h4>{{ app.body }}</h4>
-          <h4>{{ app.date }}</h4>
+          <h5>{{ posts.nickname }} Has a new post:)</h5>
+          <img src="{{ posts.thumb.url }}" />
+          <h4>{{ posts.body }}</h4>
+          <h4>{{ posts.date }}</h4>
           <button type="button" name="button">Like!</button>
           <button type="button" data-toggle="modal" data-target="#myModal">Comment!</button>
           <!-- The Modal -->

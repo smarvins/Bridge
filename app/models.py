@@ -6,7 +6,7 @@ class app(models.Model):
     thumb = models.ImageField(default= 'default.png', blank=True)
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
-    # nickname = models.ForeignKey(User, default=None)
+    nickname = models.ForeignKey(User, null=True)
 
     def __str__(self):
         return self.body
@@ -18,7 +18,7 @@ class profile(models.Model):
     bio = models.TextField()
     email = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
-    # nickname = models.ForeignKey(User)
+    nickname = models.ForeignKey(User, null=True)
 
     def __str__(self):
         return self.name

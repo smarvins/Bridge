@@ -73,8 +73,8 @@ form{
     <h1>Welcome to the bridge</h1>
     <h2 class="paragraph">A site where you can share your experiences with your friends and families, be inspired to look for new experiences from others and make new friends with them ! The bridge was specifically built to meet this needs because we all need to connect to one another to express our emotions,energy and the very vibrance that makes us us</h2>
 
-    <form class="form" action={% url 'signup' %} method="post">
-      <h2>Sign in here!</h2>
+    <form class="form" action={% url 'home' %} method="post">
+      <h2>Sign up here!</h2>
       {% csrf_token %}
       {{ form }}
       <input type="submit" value="Signup">

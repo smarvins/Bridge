@@ -8,9 +8,57 @@
      <link rel="stylesheet" href="{% static 'styles.css' %}">
      <link href="https://fonts.googleapis.com/css?family=Gothic+A1|Poiret+One" rel="stylesheet">
   </head>
+  <style>
+  ::-webkit-scrollbar {
+      width: 20px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+      background: linear-gradient(#007991, #78ffd6);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+      border-radius: 20px;
+      border:2px solid white;
+      background: transparent;
+  }
+
+  h1{
+    margin-bottom: 10%;
+    font-size: 60px;
+    text-align: center;
+  }
+  input{
+    color: white;
+    border-radius: 50%;
+    border: 10px solid white;
+    border-top: 10px transparent;
+    border-bottom: 10px solid white;
+    /* border-color: white; */
+    border-width: 5px;
+    background: transparent;
+    padding: 0px;
+    width: 100px;
+    height: 100px;
+  }
+  body{
+    color: white;
+    font-family: 'Gothic A1', sans-serif;
+    font-family: 'Poiret One', cursive;
+    height: 100%;
+   background: linear-gradient(#007991, #78ffd6);
+   background-repeat: no-repeat;
+  }
+  .list_of_posts{
+    border: 5px solid white;
+    padding-bottom: 50px;
+  }
+  </style>
   <body>
                      <!-- logout button -->
-    <form class="logout" action={% url 'logout' %} method="post">
+    <form class="logout" action={% url 'home' %} method="post">
       {% csrf_token %}
       <input type="submit" value="logout">
     </form>
@@ -24,7 +72,13 @@
         {{ form }}
         <input type="Submit" value="Create">
       </form>
-
+      {% for posts in posts %}
+        <div class="list_of_posts">
+          <h5>{{ posts.nickname }} Has a new post:)</h5>
+          <img src="{{ posts.thumb.url }}" />
+          <h4>{{ posts.body }}</h4>
+          <h4>{{ posts.date }}</h4>
+      {% endfor %}
     </div>
   </body>
 </html>

@@ -1,3 +1,46 @@
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: linear-gradient(#007991, #78ffd6);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border:2px solid white;
+    background: transparent;
+}
+
+h1{
+  margin-bottom: 10%;
+  font-size: 60px;
+  text-align: center;
+}
+input{
+  color: white;
+  border-radius: 50%;
+  border: 10px solid white;
+  border-top: 10px transparent;
+  border-bottom: 10px solid white;
+  /* border-color: white; */
+  border-width: 5px;
+  background: transparent;
+  padding: 0px;
+  width: 100px;
+  height: 100px;
+}
 body{
-  background-color: blue
+  color: white;
+  font-family: 'Gothic A1', sans-serif;
+  font-family: 'Poiret One', cursive;
+  height: 100%;
+ background: linear-gradient(#007991, #78ffd6);
+ background-repeat: no-repeat;
+}
+.list_of_posts{
+  border: 5px solid white;
+  padding-bottom: 50px;
 }

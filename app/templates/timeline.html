@@ -86,6 +86,9 @@ img{
   background-size: cover;
   position: relative;
 }
+h3{
+  color: black;
+}
   </style>
   <body>
 
@@ -99,7 +102,7 @@ img{
     <div class="posts">
       {% for posts in posts %}
         <div class="list_of_posts">
-          <h5>{{ posts.nickname }} Has a new post:)</h5>
+          <h5>{{ posts.nickname }} has a post:)</h5>
           <img src="{{ posts.thumb.url }}" />
           <h4>{{ posts.body }}</h4>
           <h4>{{ posts.date }}</h4>
@@ -112,16 +115,16 @@ img{
 
                   <!-- Modal Header -->
                   <div class="modal-header">
-                    <h4>Enter comment</h4>
+                    <h3>Enter comment</h3>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
 
                   <!-- Modal body -->
                   <div class="modal-body">
                     {% for postcomment in postcomment %}
-                       <h4>{{ postcomment.nickname }}</h4>
-                       <h4>{{ postcomment.comment }}</h4>
-                       <h4>{{ postcomment.post_on }}</h4>
+                       <h3>{{ postcomment.nickname }}</h3>
+                       <h3>{{ postcomment.comment }}</h3>
+                       <h3>{{ postcomment.post_on }}</h3>
                     {% endfor %}
                   </div>
 

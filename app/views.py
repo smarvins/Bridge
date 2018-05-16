@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import app,comments
+from .models import app,Comment
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
@@ -9,7 +9,7 @@ from .import forms
 # Create your views here.
 def timeline(request):
     posts = app.objects.all().order_by('date');
-    postcomment = comments.objects.all().order_by('date');
+    postcomment = Comment.objects.all().order_by('date');
     return render(request,'timeline.html',{'posts':posts}, {'postcomment':postcomment})
 
 ###########################################################################

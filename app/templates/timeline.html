@@ -112,14 +112,17 @@ img{
 
                   <!-- Modal Header -->
                   <div class="modal-header">
-                    <h4 class="modal-title"><textarea id="words" rows="10" cols="20">Enter comment</textarea>
-<input type="button" onclick="getwords()" value="Enter" /> <br></h4>
+                    <h4>Enter comment</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
 
                   <!-- Modal body -->
                   <div class="modal-body">
-                    <p id="para"></p>
+                    {% for postcomment in postcomment %}
+                       <h4>{{ postcomment.nickname }}</h4>
+                       <h4>{{ postcomment.comment }}</h4>
+                       <h4>{{ postcomment.body }}</h4>
+                    {% endfor %}   
                   </div>
 
                   <!-- Modal footer -->
@@ -139,11 +142,4 @@ img{
     {% bootstrap_javascript %}
     {% endblock %}
   </body>
-  <script type="text/javascript">
-  function getwords() {
-    text = words.value;
-    document.getElementById("para").innerHTML += '<p>'+text
-    document.getElementById("words").value = ""
-  }
-</script>
 </html>

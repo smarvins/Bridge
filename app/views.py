@@ -10,7 +10,8 @@ from .import forms
 def timeline(request):
     posts = app.objects.all().order_by('date');
     postcomment = Comment.objects.all().order_by('date');
-    return render(request,'timeline.html',{'posts':posts}, {'postcomment':postcomment})
+    return render(request,'timeline.html',{'posts':posts})
+    return render(request,'timeline.html',{'postcomment':postcomment})
 
 ###########################################################################
 

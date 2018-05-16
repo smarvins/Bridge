@@ -9,7 +9,8 @@ from .import forms
 # Create your views here.
 def timeline(request):
     posts = app.objects.all().order_by('date');
-    return render(request,'timeline.html',{'posts':posts})
+    postcomment = comments.objects.all().order_by('date');
+    return render(request,'timeline.html',{'posts':posts}, {'postcomment':postcomment})
 
 ###########################################################################
 

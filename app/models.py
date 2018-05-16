@@ -22,3 +22,11 @@ class profile(models.Model):
 
     def __str__(self):
         return self.name
+
+class Comment(models.Model):
+  nickname = models.ForeignKey(User, null=True)
+  comment = models.CharField(max_length = 100)
+  post_on = models.DateTimeField(auto_now_add=True)
+
+  def __str__(self):
+    return self.comment

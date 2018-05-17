@@ -64,8 +64,18 @@
     </form>
 
     <h1>This is your profile page</h1>
+
+    {% for profile in posts %}
+      <div class="list_of_posts">
+        <h5>{{ posts.nickname }}h5>
+        <img src="{{ posts.thumb.url }}" />
+        <h4>{{ posts.body }}</h4>
+        <h4>{{ posts.date }}</h4>
+        <h4>{{ posts.date }}</h4>
+        <h4>{{ posts.date }}</h4>
+    {% endfor %}
+    <h2 class="float: right;">You'll create new posts here</h2>
     <div class="newpost">
-      <h2>You'll create new posts here</h2>
                      <!-- create new post  -->
       <form class="form" action={% url 'profile' %} method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -80,5 +90,6 @@
           <h4>{{ posts.date }}</h4>
       {% endfor %}
     </div>
+  </div>
   </body>
 </html>

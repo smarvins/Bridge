@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import app,Comment
+from .models import app,Comment,profile
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
@@ -16,7 +16,8 @@ def timeline(request):
 ###########################################################################
 
 def profile(request):
-    return render(request,'profile.html')
+    profile = profile.objects.all().order_by('date');
+    return render(request,'profile.html', {'profile':profile})
 
 ###########################################################################
 

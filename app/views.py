@@ -18,7 +18,7 @@ def timeline(request):
 ###########################################################################
 
 def profile(request):
-    profile = profile.objects.all().order_by('date');
+    # profile = profile.objects.all().order_by('date');
     return render(request,'profile.html', {'profile':profile})
 
 ###########################################################################

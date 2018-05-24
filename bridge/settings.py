@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
+LOGIN_REDIRECT_URL = 'profile'
+
 INSTALLED_APPS = [
     'bootstrap4',
     'django.contrib.admin',

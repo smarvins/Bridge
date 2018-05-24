@@ -7,6 +7,8 @@ from .import forms
 
 
 # Create your views here.
+
+@login_required(login_url='/accounts/login/')
 def timeline(request):
     posts = app.objects.all().order_by('date');
     postcomment = Comment.objects.all().order_by('post_on');

@@ -1,5 +1,6 @@
 # Bridge
-This is a site where users can come over and post photos and view others
+This is a site where users can come over and post photos and view others.
+The site is currently under maintainence and thus you cannot signup the page due to security checks.
 ## Technologies used
 * Python3.6
 * Django framework
